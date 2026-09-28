@@ -1,65 +1,73 @@
-# BEIST: Behavioural Evidence Integrity and Stress Testing
+# BEIST: Auditable Evidence Analysis for Ransomware Sandbox Reports
 
-Reproducible code, derived evidence records, evaluation manifests, result tables, and figures for the BEIST study on auditing evidence support in ransomware sandbox reports.
+This repository contains the code, frozen configuration, tabular data, figures, and machine-readable results used for the BEIST paper.
+
+## Data source
+
+The study uses the source dataset released with **RanDS: A large-Scale open dataset of raw binaries and extracted features for ransomware research**. The original source archive contains the JSON behaviour reports used to construct the evaluation cohort. Those reports are not redistributed here. Users who need the underlying reports should download them from the [original dataset repository](https://ran-ds.com/home) and follow its licence and access conditions. This repository contains only the derived selection table, the frozen protocol configuration, and the published aggregate results.
 
 ## Repository contents
 
-- `src/`: deterministic pipeline, analyses, validation, and figure-generation scripts.
-- `config/`: frozen BEIST protocol rules.
-- `data/`: the 2,000-report evaluation cohort, manifests, derived evidence records, normalized atoms, and perturbation manifests.
-- `results/`: machine-readable primary, supplementary, ablation, sensitivity, mutation, and downstream-analysis results.
-- `figures/`: generated figures in SVG, PNG, and PDF formats.
-- `docs/`: data and reproducibility notes.
+- `src/`: deterministic BEIST analysis, supplementary analysis, validation, and figure-generation scripts.
+- `config/protocol_rules.json`: frozen BEIST capability rules and observability guards.
+- `data/sample_manifest.csv`: the fixed 2,000-report evaluation manifest (1,000 benign and 1,000 ransomware), with labels, hashes, metadata, and report-level measures.
+- `data/eligibility_selection_table.csv`: row-level eligibility and selection decisions used to construct the final cohort.
+- `results/`: primary results, inferential tests, corroboration, fragility, mutation validation, sensitivity analyses, ablations, search-bound validation, volume analysis, and downstream utility results.
+- `figures/`: publication figures in SVG, PNG, and PDF formats.
+- `requirements.txt`: Python dependencies for the analysis scripts.
 
-The repository contains derived records from the RanDS ransomware dataset. The original RanDS dataset remains subject to its own license and redistribution terms; see `docs/DATA_AND_LICENSES.md`.
+No raw binaries, raw JSON behaviour reports, or per-report derived evidence records are included.
 
-## Dataset summary
+## Paper-to-artifact map
 
-| Layer | Ransomware | Benign | Ransomware families |
-|---|---:|---:|---:|
-| Published source dataset | 104,616 | 110,788 | 533 |
-| Successful dynamic executions | 51,985 | 30,855 | — |
-| Locally eligible JSON reports | 49,066 | 27,697 | 390 |
-| Final evaluation cohort | 1,000 | 1,000 | 102 |
+| Paper content | Released artifact |
+|---|---|
+| Cohort composition and report structure | `results/overall_summary.json`, `results/year_summary.csv`, `data/sample_manifest.csv` |
+| Capability support rates and inferential tests | `results/capability_summary.csv`, `results/capability_inferential_tests.csv` |
+| Corroboration analysis | `results/corroboration_summary.csv` |
+| Evidence fragility profile | `results/fragility_summary.csv`, `results/fragility_points.csv` |
+| Mutation and protocol validation | `results/mutation_validation_results.csv`, `results/mutation_validation_summary.json`, `results/protocol_conformance_results.csv`, `results/protocol_conformance_cases.json` |
+| Rule and contradiction sensitivity | `results/sensitivity_analysis.csv`, `results/predicate_sensitivity.csv`, `results/contradiction_sensitivity.csv` |
+| Ablation comparison | `results/ablation_summary.csv`, `results/ablation_deletion_comparison.csv` |
+| Search-bound validation | `results/efp_search_validation_summary.csv`, `results/efp_search_validation_per_claim.csv`, `results/efp_search_validation_meta.json` |
+| Volume and evidentiary-strength analysis | `results/volume_strength_correlations.csv`, `results/volume_strength_quartiles.csv`, `results/volume_strength_extremes.json` |
+| Downstream discrimination analysis | `results/downstream_utility.csv` |
+| Figures in the paper | `figures/` |
 
-The final cohort is fixed by seed `20260912`. SHA-256 values and selection details are stored in `data/sample_manifest.csv`.
+The file names in this table identify released artifacts; they are not additional data sources.
 
-## Requirements
+## Reproduction
 
-Python 3.10 or newer is recommended. Install dependencies with:
+Create a Python 3.10+ environment and install the dependencies:
 
 ```bash
 python -m venv .venv
 # Linux/macOS
 source .venv/bin/activate
 # Windows PowerShell
-.venv\Scripts\Activate.ps1
+.venv\\Scripts\\Activate.ps1
 pip install -r requirements.txt
 ```
 
-## Reproduction
-
-The published derived cohort can be analyzed directly:
+After the source archive has been placed locally, the pipeline can regenerate the derived records and the analyses can then be run:
 
 ```bash
 python src/beist_analysis.py
 python src/beist_supplementary.py
 python src/make_protocol_figures.py
-python src/make_chinese_figures.py
 ```
 
-Outputs are written to `results/` and `figures/`. The pipeline that constructs a new cohort from the full source archive is available as `src/beist_pipeline.py`; it requires a local RanDS archive configured with the `RANDS_BEHAVIOUR_ROOT` environment variable.
+The cohort-construction script is `src/beist_pipeline.py`. It requires a local copy of the source archive and the corresponding input-root configuration. It does not execute binaries; it parses report data and computes derived evidence. The scripts write regenerated derived records, tables, and figures to `data/`, `results/`, and `figures/`. The released tables and figures provide the reference outputs without requiring the source archive.
 
-The scripts operate on JSON reports and derived records. They do not execute PE binaries.
-
-## Reproducibility records
-
-`results/run_metadata.json` records the protocol version, seed, selected counts, and output hashes. The conformance cases, mutation manifests, and validation tables provide checks for the deterministic protocol implementation.
+The frozen run used seed `20260912`, 1,000 reports per label, a balanced 300-report fragility cohort, and 1,437 mutation instances. The released result files are the outputs reported in the paper and should be treated as the reference run.
 
 ## Citation
 
-If you use this repository, cite the BEIST paper and the original RanDS dataset paper. A machine-readable citation template is provided in `CITATION.cff`.
+Please cite the BEIST paper and the original dataset paper when using this repository or the source data. `CITATION.cff` provides the software citation metadata.
 
-## License
+## Licence
 
-Code is released under the MIT License. Derived data are released under the Creative Commons Attribution 4.0 International license where redistribution is permitted. Third-party source data remain governed by their original terms.
+The code is released under the MIT License. Derived tables and figures are released under CC BY 4.0 where redistribution is permitted. The source archive remains governed by its original licence and access terms.
+
+
+
