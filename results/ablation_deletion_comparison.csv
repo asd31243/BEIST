@@ -1,0 +1,4 @@
+﻿method,disrupted_supported_claims,mapped_to_I,mapped_to_N,false_negative_rate,interpretation
+naive_two_state,31,0,31,1.0,known record-loss stress test; not execution-level ground truth
+beist_core_without_fault_context,31,3,28,0.9032258064516129,known record-loss stress test; not execution-level ground truth
+beist_with_declared_fault_context,31,31,0,0.0,known record-loss stress test; not execution-level ground truth

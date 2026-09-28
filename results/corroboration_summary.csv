@@ -1,0 +1,3 @@
+﻿label,reports,supported_claims,corroborated_claims,single_field_supported_claims,explicit_contradictions,reports_with_contradiction,corroboration_rate,consistency_index
+benign,1000,3577,2737,840,0,0,0.7651663405088063,1.0
+ransomware,1000,5017,3644,1373,0,0,0.726330476380307,1.0

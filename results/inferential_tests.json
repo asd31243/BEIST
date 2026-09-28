@@ -1,0 +1,269 @@
+{
+  "protocol_version": "BEIST-1.0",
+  "mann_whitney_tests": [
+    {
+      "metric": "atom_count",
+      "benign_mean": 301.794,
+      "ransomware_mean": 767.115,
+      "benign_median": 223.5,
+      "ransomware_median": 696.0,
+      "U": 203729.5,
+      "p_value": 1.719847719702377e-116,
+      "rank_biserial": -0.592541,
+      "p_value_bh": 8.599238598511884e-116
+    },
+    {
+      "metric": "readiness",
+      "benign_mean": 0.947875,
+      "ransomware_mean": 0.98825,
+      "benign_median": 1.0,
+      "ransomware_median": 1.0,
+      "U": 405281.5,
+      "p_value": 1.9152426165473607e-34,
+      "rank_biserial": -0.18943699999999997,
+      "p_value_bh": 3.1920710275789346e-34
+    },
+    {
+      "metric": "environment_dependence_rate",
+      "benign_mean": 0.06720452231655571,
+      "ransomware_mean": 0.05216225206656353,
+      "benign_median": 0.04321734919756502,
+      "ransomware_median": 0.030534351145038167,
+      "U": 550713.0,
+      "p_value": 8.525445622626038e-05,
+      "rank_biserial": 0.10142600000000002,
+      "p_value_bh": 8.525445622626038e-05
+    },
+    {
+      "metric": "assessability",
+      "benign_mean": 0.8996666666666665,
+      "ransomware_mean": 0.9757777777777779,
+      "benign_median": 1.0,
+      "ransomware_median": 1.0,
+      "U": 397413.5,
+      "p_value": 8.508439994819419e-32,
+      "rank_biserial": -0.20517300000000005,
+      "p_value_bh": 1.0635549993524274e-31
+    },
+    {
+      "metric": "supported_capabilities",
+      "benign_mean": 3.577,
+      "ransomware_mean": 5.017,
+      "benign_median": 4.0,
+      "ransomware_median": 5.0,
+      "U": 291042.0,
+      "p_value": 3.9669061101619343e-60,
+      "rank_biserial": -0.41791599999999995,
+      "p_value_bh": 9.917265275404836e-60
+    }
+  ],
+  "capability_fisher_tests": [
+    {
+      "capability": "file_impact",
+      "benign": {
+        "label": "benign",
+        "supported": 945,
+        "not_supported": 0,
+        "indeterminate": 55,
+        "n": 1000
+      },
+      "ransomware": {
+        "label": "ransomware",
+        "supported": 958,
+        "not_supported": 0,
+        "indeterminate": 42,
+        "n": 1000
+      },
+      "odds_ratio_benign_vs_ransomware": 0.7532738660087304,
+      "odds_ratio_ci_low": 0.49912658232727464,
+      "odds_ratio_ci_high": 1.136828887305552,
+      "risk_difference_ransomware_minus_benign": 0.013000000000000012,
+      "fisher_p": 0.21143994448596154,
+      "fisher_p_bh": 0.21143994448596154
+    },
+    {
+      "capability": "backup_impairment",
+      "benign": {
+        "label": "benign",
+        "supported": 7,
+        "not_supported": 868,
+        "indeterminate": 125,
+        "n": 1000
+      },
+      "ransomware": {
+        "label": "ransomware",
+        "supported": 58,
+        "not_supported": 921,
+        "indeterminate": 21,
+        "n": 1000
+      },
+      "odds_ratio_benign_vs_ransomware": 0.11449109282216897,
+      "odds_ratio_ci_low": 0.0519980067771507,
+      "odds_ratio_ci_high": 0.25209063093115736,
+      "risk_difference_ransomware_minus_benign": 0.051000000000000004,
+      "fisher_p": 2.202709339958997e-11,
+      "fisher_p_bh": 2.8320548656615675e-11
+    },
+    {
+      "capability": "persistence",
+      "benign": {
+        "label": "benign",
+        "supported": 546,
+        "not_supported": 335,
+        "indeterminate": 119,
+        "n": 1000
+      },
+      "ransomware": {
+        "label": "ransomware",
+        "supported": 717,
+        "not_supported": 268,
+        "indeterminate": 15,
+        "n": 1000
+      },
+      "odds_ratio_benign_vs_ransomware": 0.47468342764455423,
+      "odds_ratio_ci_low": 0.39429322581126874,
+      "odds_ratio_ci_high": 0.5714639302178524,
+      "risk_difference_ransomware_minus_benign": 0.17099999999999993,
+      "fisher_p": 2.6467106417203154e-15,
+      "fisher_p_bh": 4.569566232742183e-15
+    },
+    {
+      "capability": "privilege_manipulation",
+      "benign": {
+        "label": "benign",
+        "supported": 176,
+        "not_supported": 798,
+        "indeterminate": 26,
+        "n": 1000
+      },
+      "ransomware": {
+        "label": "ransomware",
+        "supported": 535,
+        "not_supported": 458,
+        "indeterminate": 7,
+        "n": 1000
+      },
+      "odds_ratio_benign_vs_ransomware": 0.18564558570002723,
+      "odds_ratio_ci_low": 0.15127019976588724,
+      "odds_ratio_ci_high": 0.2278326037993251,
+      "risk_difference_ransomware_minus_benign": 0.35900000000000004,
+      "fisher_p": 6.432780891631661e-65,
+      "fisher_p_bh": 5.789502802468495e-64
+    },
+    {
+      "capability": "process_interference",
+      "benign": {
+        "label": "benign",
+        "supported": 63,
+        "not_supported": 857,
+        "indeterminate": 80,
+        "n": 1000
+      },
+      "ransomware": {
+        "label": "ransomware",
+        "supported": 186,
+        "not_supported": 796,
+        "indeterminate": 18,
+        "n": 1000
+      },
+      "odds_ratio_benign_vs_ransomware": 0.29424725444968497,
+      "odds_ratio_ci_low": 0.21782019874487127,
+      "odds_ratio_ci_high": 0.39749044051047305,
+      "risk_difference_ransomware_minus_benign": 0.123,
+      "fisher_p": 3.758418552732573e-17,
+      "fisher_p_bh": 8.45644174364829e-17
+    },
+    {
+      "capability": "network_staging",
+      "benign": {
+        "label": "benign",
+        "supported": 642,
+        "not_supported": 165,
+        "indeterminate": 193,
+        "n": 1000
+      },
+      "ransomware": {
+        "label": "ransomware",
+        "supported": 915,
+        "not_supported": 54,
+        "indeterminate": 31,
+        "n": 1000
+      },
+      "odds_ratio_benign_vs_ransomware": 0.1665903471013829,
+      "odds_ratio_ci_low": 0.12882082190177835,
+      "odds_ratio_ci_high": 0.21543368018967843,
+      "risk_difference_ransomware_minus_benign": 0.273,
+      "fisher_p": 2.423262481772614e-51,
+      "fisher_p_bh": 1.0904681167976763e-50
+    },
+    {
+      "capability": "execution_proxy",
+      "benign": {
+        "label": "benign",
+        "supported": 429,
+        "not_supported": 474,
+        "indeterminate": 97,
+        "n": 1000
+      },
+      "ransomware": {
+        "label": "ransomware",
+        "supported": 490,
+        "not_supported": 498,
+        "indeterminate": 12,
+        "n": 1000
+      },
+      "odds_ratio_benign_vs_ransomware": 0.781979341649094,
+      "odds_ratio_ci_low": 0.6556345477132722,
+      "odds_ratio_ci_high": 0.9326715513981323,
+      "risk_difference_ransomware_minus_benign": 0.061,
+      "fisher_p": 0.007084465309407033,
+      "fisher_p_bh": 0.007970023473082913
+    },
+    {
+      "capability": "anti_analysis",
+      "benign": {
+        "label": "benign",
+        "supported": 430,
+        "not_supported": 542,
+        "indeterminate": 28,
+        "n": 1000
+      },
+      "ransomware": {
+        "label": "ransomware",
+        "supported": 644,
+        "not_supported": 345,
+        "indeterminate": 11,
+        "n": 1000
+      },
+      "odds_ratio_benign_vs_ransomware": 0.41702081290181975,
+      "odds_ratio_ci_low": 0.3482962065915193,
+      "odds_ratio_ci_high": 0.4993059215176908,
+      "risk_difference_ransomware_minus_benign": 0.21400000000000002,
+      "fisher_p": 8.878085005792355e-22,
+      "fisher_p_bh": 2.6634255017377064e-21
+    },
+    {
+      "capability": "ransomware_impact",
+      "benign": {
+        "label": "benign",
+        "supported": 339,
+        "not_supported": 481,
+        "indeterminate": 180,
+        "n": 1000
+      },
+      "ransomware": {
+        "label": "ransomware",
+        "supported": 514,
+        "not_supported": 425,
+        "indeterminate": 61,
+        "n": 1000
+      },
+      "odds_ratio_benign_vs_ransomware": 0.48492144316181707,
+      "odds_ratio_ci_low": 0.40490286410100257,
+      "odds_ratio_ci_high": 0.5807536248483581,
+      "risk_difference_ransomware_minus_benign": 0.175,
+      "fisher_p": 3.0463774884947884e-15,
+      "fisher_p_bh": 4.569566232742183e-15
+    }
+  ]
+}

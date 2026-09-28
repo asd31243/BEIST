@@ -1,0 +1,22 @@
+{
+  "protocol_version": "BEIST-1.0",
+  "seed": 20260912,
+  "target_per_label": 1000,
+  "mutation_base": 300,
+  "selected_count": 2000,
+  "selected_by_label": {
+    "benign": 1000,
+    "ransomware": 1000
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "output_sha256": {
+    "论文2数据集/sample_manifest.csv": "67ac507be3250ed1860696e99606c5651e567f4fbe1a1c0b5d49358ae28b2604",
+    "论文2数据集/protocol_rules.json": "d1b61f1286f60453fb58d95d08bcd38fc685c136f7e29266b62acf6fb09efa9e",
+    "论文2数据集/exclusion_audit/overlap_check.json": "5c62a95c3ae80cd2316b84568a971855a0e0a81121de170caa5742d93575245e",
+    "实验代码和结果/results/overall_summary.json": "4f18ef870a62cbaa3b18bc5d3c30e7e6ae025a537857c2aa376be4f4e4c8a4ff",
+    "实验代码和结果/results/capability_summary.csv": "bd60ec24cc2a1b790d9bf6464d51387e2ec3fce9195291cc8d650d495eb0dea8",
+    "实验代码和结果/results/mutation_validation_results.csv": "a8593caa1faf7e26fde632a37cb53b3bcabc88049820442637df0e9302a3a33a",
+    "实验代码和结果/results/mutation_validation_summary.json": "ef4e6dcf3ad4a3bd2e454816562fd9633b50154c29e843afc63b237c6b6a81e1",
+    "实验代码和结果/results/sensitivity_analysis.csv": "06a79a0922eb12fc2985e1efdc080a661944c391a1273694f8ff0508dbeb0e8e"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "protocol_version": "BEIST-1.0",
+  "oracle_cases": [
+    {
+      "case": "C1_support",
+      "capability": "backup_impairment",
+      "expected_state": "S",
+      "description": "process and command corroborate a backup command",
+      "actual_state": "S",
+      "contradiction_count": 0,
+      "pass": true
+    },
+    {
+      "case": "C2_indeterminate",
+      "capability": "file_impact",
+      "expected_state": "I",
+      "description": "only one sparse field is observable",
+      "actual_state": "I",
+      "contradiction_count": 0,
+      "pass": true
+    },
+    {
+      "case": "C3_not_supported",
+      "capability": "backup_impairment",
+      "expected_state": "N",
+      "description": "designated backup channels observable without a backup-support token",
+      "actual_state": "N",
+      "contradiction_count": 0,
+      "pass": true
+    },
+    {
+      "case": "C4_missing_not_conflict",
+      "capability": "file_impact",
+      "expected_state": "I",
+      "description": "missing command channel is not a contradiction",
+      "actual_state": "I",
+      "contradiction_count": 0,
+      "pass": true
+    },
+    {
+      "case": "C5_explicit_conflict",
+      "capability": "backup_impairment",
+      "expected_state": "K",
+      "description": "success and failure claims for one field are recorded as conflict",
+      "actual_state": "K",
+      "contradiction_count": 1,
+      "pass": true
+    }
+  ],
+  "case_count": 5,
+  "all_cases_pass": true,
+  "monotonicity_case": {
+    "case": "C6_evidence_monotonicity",
+    "description": "adding independent compatible observations does not lower assessability",
+    "base_assessability": 0.1111111111111111,
+    "augmented_assessability": 0.2222222222222222,
+    "pass": true
+  }
+}
