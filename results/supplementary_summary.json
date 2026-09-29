@@ -1,0 +1,19 @@
+{
+  "protocol_version": "BEIST-1.0",
+  "seed": 20260912,
+  "cohort": {
+    "reports": 2000,
+    "benign": 1000,
+    "ransomware": 1000
+  },
+  "experiments": [
+    "baseline_ablation",
+    "predicate_sensitivity",
+    "bounded_vs_exhaustive_order2_efp",
+    "volume_strength",
+    "downstream_utility",
+    "contradiction_sensitivity"
+  ],
+  "semantic_annotation_status": "not performed; requires independent analysts and is retained as an external-validity limitation",
+  "execution_repetition_status": "not performed; the supplied archive contains one report per selected SHA-256 and no controlled rerun metadata"
+}

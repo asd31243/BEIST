@@ -1,0 +1,4 @@
+﻿method,supported_claim_states,not_supported_states,indeterminate_states,full_beist_indeterminate_claims_mapped_to_N,state_space,corroboration,provenance,fragility
+full_beist,8594,8285,1121,0,S/N/I,independent fields retained,claim paths retained,bounded EFP
+naive_two_state,8594,9406,0,1121,S/N,not used,not retained by baseline,not computed
+report_guard_only,8594,9406,0,1121,S/N/I,not used,not retained by baseline,not computed

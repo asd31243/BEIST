@@ -1,0 +1,7 @@
+﻿case,capability,expected_state,actual_state,contradiction_count,pass,description
+C1_support,backup_impairment,S,S,0,True,process and command corroborate a backup command
+C2_indeterminate,file_impact,I,I,0,True,only one sparse field is observable
+C3_not_supported,backup_impairment,N,N,0,True,designated backup channels observable without a backup-support token
+C4_missing_not_conflict,file_impact,I,I,0,True,missing command channel is not a contradiction
+C5_explicit_conflict,backup_impairment,K,K,1,True,success and failure claims for one field are recorded as conflict
+C6_evidence_monotonicity,all_capabilities,NA,0.2222222222222222,0,1,adding independent compatible observations does not lower assessability
