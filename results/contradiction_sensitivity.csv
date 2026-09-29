@@ -1,5 +1,0 @@
-﻿rule,reports_flagged,candidate_pairs,interpretation
-frozen_same_field_same_context,0,0,Only the frozen rule is a BEIST-1.0 contradiction; relaxed rules are upper-bound sensitivity audits.
-same_field_any_context,0,0,Only the frozen rule is a BEIST-1.0 contradiction; relaxed rules are upper-bound sensitivity audits.
-cross_field_same_context,0,0,Only the frozen rule is a BEIST-1.0 contradiction; relaxed rules are upper-bound sensitivity audits.
-any_field_any_context,20,5815,Only the frozen rule is a BEIST-1.0 contradiction; relaxed rules are upper-bound sensitivity audits.

@@ -1,6 +1,0 @@
-﻿operation,n,property_pass_rate,provenance_pass_rate,contradiction_detection_rate
-delete_critical_atom,297,1.0,1.0,NA
-delete_noncritical_atom,300,1.0,1.0,NA
-inject_conflict,300,1.0,1.0,1.0
-normalize_identifier,270,1.0,1.0,NA
-substitute_identifier,270,1.0,1.0,NA
