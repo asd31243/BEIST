@@ -1,6 +1,6 @@
 # BEIST: Auditable Evidence Analysis for Ransomware Sandbox Reports
 
-This repository contains the code, frozen configuration, tabular data, figures, and machine-readable results used for the BEIST paper.
+This repository contains the code, frozen configuration, tabular data and machine-readable results used for the BEIST paper.
 
 ## Data source
 
@@ -8,12 +8,11 @@ The study uses the source dataset released with **RanDS: A large-Scale open data
 
 ## Repository contents
 
-- `src/`: deterministic BEIST analysis, supplementary analysis, validation, and figure-generation scripts.
+- `src/`: deterministic BEIST analysis, supplementary analysis and validation.
 - `config/protocol_rules.json`: frozen BEIST capability rules and observability guards.
 - `data/sample_manifest.csv`: the fixed 2,000-report evaluation manifest (1,000 benign and 1,000 ransomware), with labels, hashes, metadata, and report-level measures.
 - `data/eligibility_selection_table.csv`: row-level eligibility and selection decisions used to construct the final cohort.
 - `results/`: primary results, inferential tests, corroboration, fragility, mutation validation, sensitivity analyses, ablations, search-bound validation, volume analysis, and downstream utility results.
-- `figures/`: publication figures in SVG, PNG, and PDF formats.
 - `requirements.txt`: Python dependencies for the analysis scripts.
 
 No raw binaries, raw JSON behaviour reports, or per-report derived evidence records are included.
@@ -32,7 +31,6 @@ No raw binaries, raw JSON behaviour reports, or per-report derived evidence reco
 | Search-bound validation | `results/efp_search_validation_summary.csv`, `results/efp_search_validation_per_claim.csv`, `results/efp_search_validation_meta.json` |
 | Volume and evidentiary-strength analysis | `results/volume_strength_correlations.csv`, `results/volume_strength_quartiles.csv`, `results/volume_strength_extremes.json` |
 | Downstream discrimination analysis | `results/downstream_utility.csv` |
-| Figures in the paper | `figures/` |
 
 The file names in this table identify released artifacts; they are not additional data sources.
 
@@ -54,20 +52,12 @@ After the source archive has been placed locally, the pipeline can regenerate th
 ```bash
 python src/beist_analysis.py
 python src/beist_supplementary.py
-python src/make_protocol_figures.py
 ```
 
-The cohort-construction script is `src/beist_pipeline.py`. It requires a local copy of the source archive and the corresponding input-root configuration. It does not execute binaries; it parses report data and computes derived evidence. The scripts write regenerated derived records, tables, and figures to `data/`, `results/`, and `figures/`. The released tables and figures provide the reference outputs without requiring the source archive.
+The cohort-construction script is `src/beist_pipeline.py`. It requires a local copy of the source archive and the corresponding input-root configuration. It parses report data and computes derived evidence. The scripts write regenerated derived records and tables to `data/` and `results/`. The released tables provide the reference outputs.
 
-The frozen run used seed `20260912`, 1,000 reports per label, a balanced 300-report fragility cohort, and 1,437 mutation instances. The released result files are the outputs reported in the paper and should be treated as the reference run.
+The frozen run used seed `20260912`, 1,000 reports per label, a balanced 300-report fragility cohort, and 1,437 mutation instances.
 
-## Citation
-
-Please cite the BEIST paper and the original dataset paper when using this repository or the source data. `CITATION.cff` provides the software citation metadata.
-
-## Licence
-
-The code is released under the MIT License. Derived tables and figures are released under CC BY 4.0 where redistribution is permitted. The source archive remains governed by its original licence and access terms.
 
 
 
